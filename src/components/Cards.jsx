@@ -7,10 +7,7 @@ export default function Cards() {
 
 
     function toggleLanguage(id) {
-        if (activeId === id) {
-            return (setActiveId(null));
-        }
-        setActiveId(id);
+        setActiveId(activeId === id ? null : id);
     }
 
     return (
@@ -19,7 +16,16 @@ export default function Cards() {
             <div className="d-flex flex-column">
                 {languages.map(language => (
                     <div className="card p-2 mb-2 border border-dark-subtle" key={language.id}>
-                        <button className={activeId === language.id ? "btn btn-warning" : "btn btn-primary"} style={{ width: '200px', marginBottom: '1rem' }} onClick={() => toggleLanguage(language.id)}>{language.title}</button>
+                        <button className={`
+                            btn
+                            align-self-start
+                            rounded
+                            px-3 py-2
+                            mb-2
+                            fw-bold
+                            ${activeId === language.id ? "btn-warning" : "btn-primary"}
+                        `}
+                            onClick={() => toggleLanguage(language.id)}>{language.title}</button>
                         {
                             activeId === language.id &&
                             (
