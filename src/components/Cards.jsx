@@ -5,10 +5,14 @@ export default function Cards() {
     return (
         <>
             <h1>Learn Web development</h1>
-            <div className="card">
-                <button>Language</button>
-                <div className="card-title">Title</div>
-                <div className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet tempora in dicta quos voluptas delectus. Vero repellat quod asperiores, maiores quidem perspiciatis atque doloribus deleniti aliquid voluptatem dolorum animi mollitia!</div>
+            <div className="cards">
+                {languages.map(language => (
+                    <div className="card" key={language.id}>
+                        <button>{language.title}</button>
+                        <div className="card-title">{language.title}</div>
+                        <div className="card-text">{language.description}</div>
+                    </div>
+                ))}
             </div>
         </>
     )
