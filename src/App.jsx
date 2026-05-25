@@ -1,12 +1,12 @@
-import { useState } from 'react'
 import Cards from './components/Cards'
+import CardsBonus from './components/CardsBonus'
 import './index.css'
 
 function App() {
 
   return (
     <>
-      <Cards />
+      <CardsBonus />
     </>
   )
 }
