@@ -15,7 +15,7 @@ export default function CardsBonus() {
     return (
         <div className="container">
             <h1 className="text-center">Learn Web development</h1>
-            <ul className="list-group list-unstyled d-flex flex-row gap-2 my-3 ">
+            <ul className="list-unstyled d-flex flex-row gap-2 my-3 ">
                 {languages.map((language) => (
                     <li key={language.id}>
                         <button
@@ -31,7 +31,7 @@ export default function CardsBonus() {
                     </li>
                 ))}
             </ul>
-            <div className="card p-2 mb-2 border border-dark-subtle">
+            <div className="card p-2 mb-2 p-3 border border-dark-subtle">
                 <h2 className="card-title">{selectedLanguage.title}</h2>
                 <div className="card-description">{selectedLanguage.description}</div>
             </div>
