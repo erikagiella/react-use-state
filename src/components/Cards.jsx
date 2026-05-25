@@ -7,6 +7,9 @@ export default function Cards() {
 
 
     function toggleLanguage(id) {
+        if (activeId === id) {
+            return (setActiveId(null));
+        }
         setActiveId(id);
     }
 
@@ -15,8 +18,8 @@ export default function Cards() {
             <h1 className="text-center">Learn Web development</h1>
             <div className="d-flex flex-column">
                 {languages.map(language => (
-                    <div className="card" key={language.id}>
-                        <button className={activeId === language.id ? "btn btn-warning" : "btn btn-primary"} onClick={() => toggleLanguage(language.id)}>{language.title}</button>
+                    <div className="card p-2 mb-2 border border-dark-subtle" key={language.id}>
+                        <button className={activeId === language.id ? "btn btn-warning" : "btn btn-primary"} style={{ width: '200px', marginBottom: '1rem' }} onClick={() => toggleLanguage(language.id)}>{language.title}</button>
                         {
                             activeId === language.id &&
                             (
@@ -26,7 +29,7 @@ export default function Cards() {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     )
 
 }
