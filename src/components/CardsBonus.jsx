@@ -9,16 +9,25 @@ export default function CardsBonus() {
     console.log(selectedLanguage)
 
     function toggleLanguage(id) {
-        setActiveId(activeId === id ? null : id);
+        setActiveId(id);
     }
 
     return (
         <div className="container">
             <h1 className="text-center">Learn Web development</h1>
-            <ul className="list-group d-flex flex-row list-unstyled">
+            <ul className="list-group list-unstyled d-flex flex-row gap-2 my-3 ">
                 {languages.map((language) => (
                     <li key={language.id}>
-                        <button onClick={() => toggleLanguage(language.id)}>{language.title}</button>
+                        <button
+                            className={`
+                            btn
+                            align-self-start
+                            rounded
+                            px-3 py-2
+                            fw-bold
+                            ${activeId === language.id ? "btn-warning" : "btn-primary"}
+                        `}
+                            onClick={() => toggleLanguage(language.id)}>{language.title}</button>
                     </li>
                 ))}
             </ul>
