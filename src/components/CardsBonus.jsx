@@ -1,6 +1,7 @@
 import { useState } from "react";
 import languages from "../assets/languages.js"
 import Button from "./Button.jsx";
+import Card from "./Card.jsx";
 
 export default function CardsBonus() {
 
@@ -27,10 +28,10 @@ export default function CardsBonus() {
 
                 ))}
             </ul>
-            <div className="card p-2 mb-2 p-3 border border-dark-subtle">
-                <h2 className="card-title">{selectedLanguage.title}</h2>
-                <div className="card-description">{selectedLanguage.description}</div>
-            </div>
+            <Card
+                key={activeId}
+                language={selectedLanguage}
+            />
         </div >
     )
 
