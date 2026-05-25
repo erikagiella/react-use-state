@@ -1,5 +1,6 @@
 import { useState } from "react";
 import languages from "../assets/languages.js"
+import Button from "./Button.jsx";
 
 export default function CardsBonus() {
 
@@ -17,18 +18,13 @@ export default function CardsBonus() {
             <h1 className="text-center">Learn Web development</h1>
             <ul className="list-unstyled d-flex flex-row gap-2 my-3 ">
                 {languages.map((language) => (
-                    <li key={language.id}>
-                        <button
-                            className={`
-                            btn
-                            align-self-start
-                            rounded
-                            px-3 py-2
-                            fw-bold
-                            ${activeId === language.id ? "btn-warning" : "btn-primary"}
-                        `}
-                            onClick={() => toggleLanguage(language.id)}>{language.title}</button>
-                    </li>
+                    <Button key={language.id}
+                        activeId={activeId}
+                        id={language.id}
+                        title={language.title}
+                        onToggle={toggleLanguage}
+                    />
+
                 ))}
             </ul>
             <div className="card p-2 mb-2 p-3 border border-dark-subtle">
