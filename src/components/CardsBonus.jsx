@@ -3,8 +3,10 @@ import languages from "../assets/languages.js"
 
 export default function CardsBonus() {
 
-    const [activeId, setActiveId] = useState();
+    const [activeId, setActiveId] = useState(1);
+    const selectedLanguage = languages.find(language => language.id === activeId);
 
+    console.log(selectedLanguage)
 
     function toggleLanguage(id) {
         setActiveId(activeId === id ? null : id);
@@ -21,12 +23,9 @@ export default function CardsBonus() {
                 ))}
             </ul>
             <div className="card p-2 mb-2 border border-dark-subtle">
-                <h2 className="card-title">TML</h2>
-                <div className="card-texy">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis corrupti itaque nam aliquid aperiam pariatur consequuntur id, omnis modi veritatis tempore voluptatum provident amet, dolorum illum doloremque eveniet tempora maxime?</div>
-
+                <h2 className="card-title">{selectedLanguage.title}</h2>
+                <div className="card-description">{selectedLanguage.description}</div>
             </div>
-
-
         </div >
     )
 
